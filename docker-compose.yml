@@ -1,0 +1,50 @@
+services:
+
+  # frontend:
+  #   image: node:16.18
+  #   platform: linux/x86_64 #  para quem tem MAC
+  #   container_name: delivery_app_frontend
+  #   build: ./front-end
+  #   ports:
+  #     - 8080:8080
+  #   working_dir: /app/front-end
+  #   volumes:
+  #     - ./front-end:/app/front-end
+  #   command: bash
+  #   restart: always
+  #   depends_on:
+  #     - backend
+
+  # backend:
+  #   image: node:16.18
+  #   platform: linux/x86_64 # para o MAC
+  #   container_name: delivery_app_backend
+  #   build: ./back-end
+  #   working_dir: /app/back-end
+  #   volumes:
+  #     - ./back-end:/app/back-end
+  #   tty: true
+  #   stdin_open: true
+  #   command: bash
+  #   restart: always
+  #   depends_on:
+  #     - db
+  #   ports:
+  #     - 3001:3001
+  #   environment:
+  #     MYSQL_USER: root
+  #     MYSQL_PASSWORD: password
+  #     HOSTNAME: mariadb
+
+  mariadb:
+        build:
+            context: .
+            dockerfile: dev.dockerfile
+        restart: always
+        environment:
+            MYSQL_ROOT_PASSWORD: password
+            MYSQL_DATABASE: cashforce_v3
+            MYSQL_USER: sql_user
+            MYSQL_PASSWORD: password
+        ports:
+            - 3306:3306
