@@ -1,0 +1,50 @@
+@import '@/assets/scss/variables.scss';
+
+.logo {
+  width: 150px;
+  padding-top: 16px;
+  padding-left: 0px;
+  align-self: start;
+
+  img {
+    margin-left: 15px;
+  }
+}
+
+#navlinks {
+  margin-top: 15px;
+  width: 100%;
+}
+
+nav {
+  background-color: $LightGrayBG;
+  display: flex;
+  flex-direction: column;
+  width: 288px;
+  height: 100vh;
+  a {
+    font-weight: 500;
+    font-size: 14px;
+    color: $CFblue;
+    display: flex;
+    padding: 20px;
+    flex-direction: row;
+    align-items: center;
+    text-decoration: none;
+    img {
+      width: 24px;
+    }
+    
+    p {
+      margin-left: 12px;
+    }
+
+    &.router-link-exact-active {
+      color: $CFgreen;
+      
+      border-left: 4px solid $CFgreen;
+    }
+
+  }
+
+}
