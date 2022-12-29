@@ -10,6 +10,10 @@ const Cnpj = (sequelize, DataTypes) => {
     tableName: "cnpjs"
   });
 
+  Cnpj.associate = (models) => {
+    Cnpj.hasMany(models.Order, { as: 'orders', foreignKey: 'cnpjId' });
+  };
+
   return Cnpj;
 };
 

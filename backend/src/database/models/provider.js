@@ -3,7 +3,7 @@ const Provider = (sequelize, DataTypes) => {
     id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
     name: DataTypes.STRING,
     tradingName: DataTypes.STRING,
-    chashforceTax: DataTypes.STRING,
+    cashforceTax: DataTypes.STRING,
     responsibleName: DataTypes.STRING,
     responsibleEmail: DataTypes.STRING,
     responsiblePosition: DataTypes.STRING,
@@ -32,6 +32,10 @@ const Provider = (sequelize, DataTypes) => {
   {
     tableName: "providers"
   });
+
+  Provider.associate = (models) => {
+    Provider.hasMany(models.Order, { as: 'orders', foreignKey: 'providerId' });
+  };
 
   return Provider;
 };

@@ -3,7 +3,7 @@ const Buyer = (sequelize, DataTypes) => {
     id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
     name: DataTypes.STRING,
     tradingName: DataTypes.STRING,
-    chashforceTax: DataTypes.STRING,
+    cashforceTax: DataTypes.STRING,
     responsibleName: DataTypes.STRING,
     responsibleEmail: DataTypes.STRING,
     responsiblePosition: DataTypes.STRING,
@@ -30,6 +30,10 @@ const Buyer = (sequelize, DataTypes) => {
   {
     tableName: "buyers"
   });
+
+  Buyer.associate = (models) => {
+    Buyer.hasMany(models.Order, { as: 'orders', foreignKey: 'buyerId' });
+  };
 
   return Buyer;
 };

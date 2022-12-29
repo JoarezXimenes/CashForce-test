@@ -1,7 +1,7 @@
 const Order = (sequelize, DataTypes) => {
   const Order = sequelize.define("Order", {
     id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
-    orderNfld: DataTypes.STRING,
+    orderNfId: DataTypes.STRING,
     orderNumber: DataTypes.STRING,
     orderPath: DataTypes.STRING,
     orderFileName: DataTypes.STRING,
@@ -28,6 +28,13 @@ const Order = (sequelize, DataTypes) => {
   {
     tableName: "orders"
   });
+
+  Order.associate = (models) => {
+    Order.belongsTo(models.User, { as: 'user', foreignKey: 'userId'});
+    Order.belongsTo(models.Cnpj, { as: 'cnpj', foreignKey: 'cnpjId'});
+    Order.belongsTo(models.Buyer, { as: 'buyer', foreignKey: 'buyerId'});
+    Order.belongsTo(models.Provider, { as: 'provider', foreignKey: 'providerId'});
+  };
 
   return Order;
 };
