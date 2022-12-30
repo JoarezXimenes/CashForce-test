@@ -1,5 +1,5 @@
 <template>
-  <nav>
+  <nav >
     <div class="logo">
       <img  src="../assets/cashforce_logo.svg" alt="Cashforce logo">
     </div>

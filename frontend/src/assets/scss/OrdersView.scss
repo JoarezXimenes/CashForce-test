@@ -1,0 +1,105 @@
+@import './variables.scss';
+
+.orders-view {
+  width: calc(100% - 270px) ;
+  border-radius: 16px 0 0 16px;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 18px 20px -10px;
+  overflow-x: scroll
+}
+
+header {
+  width: 100%;
+  height: 8%;
+  border-bottom: 3px solid $LightGrayBG;
+}
+
+h1 {
+  display: flex;
+  align-items: center;
+  margin: 30px 10px 0px 5%;
+  color: $CFblue;
+  font-size:2rem;
+  svg {
+    margin-right: 8px;
+  }
+}
+
+p {
+  color: $MediumGray;
+  font-size: 1rem;
+  display: flex;
+  margin: 0px 10px 0px 5%;
+}
+
+#orders-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 28px;
+}
+
+#thead {
+  color: $MediumGray;
+  display: flex;
+  flex-direction: row;
+  font-size: 0.8rem;
+  font-weight: 700;
+  width: 90%;
+  div {
+    width: calc(100%/7);
+  }
+}
+
+.tRows {
+  border: 1px solid #DFE2EB;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 16px;
+  width: 90%;
+  height: 48px;
+
+  div {
+    width: calc(100%/7);
+    color: $DarkGray;
+    font-size: 0.95rem;
+    font-weight: 500;
+  }
+
+  button {
+    background-color: white;
+    border: 1px solid #DFE2EB;
+    border-radius: 16px;
+    color: $DarkGray;
+    font-size: 0.75rem;
+    font-weight: 700;
+    height: 32px;
+    width: 80%;
+  }
+
+  button:hover {
+    border: 1px solid #a1a1a3;
+  }
+  .money {
+    color: $CFgreen;
+  }
+
+  
+  .p1 {
+    color: $CFgreen;
+  }
+  .p2 {
+    color: rgb(253, 65, 65);
+  }
+  .p3 {
+    color: rgb(253, 65, 65);
+  }
+  .p7 {
+    color: $CFgreen;
+  }
+  .p8 {
+    color: $CFgreen;
+  }
+}

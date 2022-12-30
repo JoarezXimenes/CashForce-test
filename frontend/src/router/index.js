@@ -1,13 +1,13 @@
 /* eslint-disable no-unused-vars */
 import { nextTick } from 'vue';
 import { createRouter, createWebHistory } from 'vue-router';
-import HomeView from '../views/HomeView.vue';
+import OrdersView from '../views/OrdersView.vue';
 
 const routes = [
   {
     path: '/',
     name: 'Orders',
-    component: HomeView,
+    component: OrdersView,
   },
   {
     path: '/about',

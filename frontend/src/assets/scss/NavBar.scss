@@ -20,7 +20,7 @@ nav {
   background-color: $LightGrayBG;
   display: flex;
   flex-direction: column;
-  width: 288px;
+  width: $navWidth;
   height: 100vh;
   a {
     font-weight: 500;
