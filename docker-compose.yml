@@ -1,26 +1,31 @@
 services:
 
-  # frontend:
-  #   image: node:16.18
-  #   platform: linux/x86_64
-  #   container_name: frontend
-  #   build: ./frontend
-  #   ports:
-  #     - 8080:8080
-  #   working_dir: /app/front-end
-  #   volumes:
-  #     - ./front-end:/app/front-end
-  #   command: bash
-  #   restart: always
-  #   depends_on:
-  #     - backend
-
+#   frontend:
+#     platform: linux/x86_64 #  para quem tem MAC
+#     container_name: frontend
+#     build: ./frontend
+#     ports:
+#       - 8080:8080
+#     working_dir: /app/frontend
+#     volumes:
+#       - ./frontend:/app/frontend
+#     tty: true
+#     stdin_open: true
+#     command: bash
+#     restart: always
+#     environment:
+#       VUE_APP_TITLE: Cashforce
+#       API_URL: http://localhost:3000
+#     depends_on:
+#       - backend
+#     networks:
+#       - virtual_wan_Front-to-Back
+    
   backend:
-    image: node:16.18
     platform: linux/x86_64
     container_name: backend
     build: ./backend
-    working_dir: /app/back-end
+    working_dir: /app/backend
     restart: always
     depends_on:
       - mariadb
@@ -32,6 +37,9 @@ services:
       MYSQL_DATABASE: cashforce_v3
       MYSQL_HOST: mariadb
       API_PORT: 3000
+    networks:
+      - virtual_wan_Front-to-Back
+      - virtual_lan_Back-to-DB
 
   mariadb:
         build:
@@ -45,3 +53,9 @@ services:
             MYSQL_PASSWORD: password
         ports:
             - 3306:3306
+        networks:
+            - virtual_lan_Back-to-DB
+networks:
+# The presence of these objects is sufficient to define them
+  virtual_wan_Front-to-Back: {}
+  virtual_lan_Back-to-DB: {}

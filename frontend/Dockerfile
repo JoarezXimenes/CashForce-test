@@ -1,9 +1,7 @@
 FROM node:16.18
-WORKDIR /app/backend
+WORKDIR /app/frontend
  
 COPY package* ./
 RUN npm install
 COPY . .
-EXPOSE 3000
-
-CMD [ "npm", "start" ] 
+CMD [ "npm", "run", "serve" ] 

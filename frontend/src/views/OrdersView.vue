@@ -23,6 +23,7 @@
 <script>
 import { OhVueIcon } from 'oh-vue-icons';
 import OrdersTableRow from '@/components/OrdersTableRow.vue';
+import requests from '@/services/requests';
 
 export default {
   name: 'OrdersView',
@@ -32,51 +33,16 @@ export default {
   },
   data() {
     return {
-      ordersFromDb: [
-        {
-          nNf: '18153',
-          value: '198450',
-          emissionDate: '2020-10-30T11:00:00-03:00',
-          orderStatusBuyer: '3',
-          buyer: {
-            id: 1,
-            name: 'SACADO 001',
-          },
-          provider: {
-            id: 1,
-            name: 'CEDENTE 002',
-          },
-        },
-        {
-          nNf: '18157',
-          value: '168850',
-          emissionDate: '2020-11-04T15:32:35-02:00',
-          orderStatusBuyer: '0',
-          buyer: {
-            id: 1,
-            name: 'SACADO 001',
-          },
-          provider: {
-            id: 1,
-            name: 'CEDENTE 002',
-          },
-        },
-        {
-          nNf: '18184',
-          value: '222795',
-          emissionDate: '2020-11-10',
-          orderStatusBuyer: '7',
-          buyer: {
-            id: 1,
-            name: 'SACADO 001',
-          },
-          provider: {
-            id: 1,
-            name: 'CEDENTE 002',
-          },
-        },
-      ],
+      ordersFromDb: [],
     };
+  },
+  created() {
+    const getOrders = async () => {
+      const orders = await requests.getAllOrders();
+      console.log(orders);
+      this.ordersFromDb = orders;
+    };
+    getOrders();
   },
 };
 </script>
