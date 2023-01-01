@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "docker-compose up -d && cd frontend && npm install && npm run serve"
+    "start": "docker-compose up -d && cd frontend && npm install && npm run serve",
+    "stop": "docker-compose down"
   },
   "repository": {
     "type": "git",
