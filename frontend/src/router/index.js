@@ -10,7 +10,7 @@ const routes = [
     component: OrdersView,
   },
   {
-    path: '/about',
+    path: '/settings',
     name: 'Settings',
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
