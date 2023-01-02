@@ -7,6 +7,8 @@ Testes no backend feitos com Mocha, chai e Sinon.
 Testes no frontend feitos com Cypress.
 
 
+<img src="./print-Cashforce.jpg" >
+
 
 <details>
 
