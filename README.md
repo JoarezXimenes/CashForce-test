@@ -18,7 +18,9 @@ Testes no frontend feitos com Cypress.
   - Dependencias: Docker, Docker-compose e npm.
   - 1- Clonar o repositório no seu computador.
   - 2- Entrar na pasta raiz do projeto e executar o comando "npm install" no terminal para instalar as dependencias.
-  - 3- Executar o comando "npm start".
+  - 3- Executar o comando "npm start". O banco de dados demora alguns minutos para iniciar, criar e popular o banco de dados, então caso nenhuma ordem apareça na página basta esperar um pouco mais.
+
+  - 4- A aplicação frontend iniciará em http://localhost:8080/
   - Para parar os containers basta apertar ctrl+C no terminal e executar o comando "npm run stop".
 
 </details>
