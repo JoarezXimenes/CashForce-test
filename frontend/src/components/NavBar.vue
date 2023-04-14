@@ -5,9 +5,9 @@
     </div>
     <div id="navlinks">
       <router-link to="/">
-      <v-icon scale="1.5" name="fa-regular-handshake"/>
-      <p>Notas fiscais</p>
-    </router-link>
+        <v-icon scale="1.5" name="fa-regular-handshake"/>
+        <p>Notas fiscais</p>
+      </router-link>
     <router-link to="/settings">
       <v-icon speed="slow" scale="1.5" name="bi-gear-fill" animation="wrench" hover/>
       <p>Configurações</p>
